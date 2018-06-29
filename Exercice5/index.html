@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr" ng-app="app" ng-controller="control">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice 1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+</head>
+<body>
+  <input type="button" value="hide" ng-click="hide()" />
+  <input type="button" value="dislay" ng-click="display()" />
+  <p ng-hide="bool"> {{test}} </p>
+  <script>
+  var app = angular.module("app", []);
+  app.controller("control", function($scope, $http) {
+    $scope.bool= true;
+    $scope.test = "Sooooo Baaaaaad";
+    $scope.display = function(){
+      $scope.bool=false;
+    }
+    $scope.hide = function(){
+      $scope.bool=true;
+    }
+  });
+  </script>
+  </body>
+  </html>
